@@ -91,10 +91,9 @@ def main():
         clock.tick(60)
         try:
             game = n.send("get")
-        except pygame.error as e:
+        except:
             run = False
             print("Couldn't get game get")
-            print(e)
             break
 
         if game.bothWent():

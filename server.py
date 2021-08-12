@@ -50,10 +50,10 @@ def threaded_client(conn, p, gameId):
             break
 
         print("Lost connection")
-        print("Closing Game", gameId)
 
         try:
             del games[gameId]
+            print("Closing Game", gameId)
         except:
             pass
         idCount-=1
@@ -68,7 +68,7 @@ while True:
     idCount +=1
     p = 0
     gameId = (idCount-1)//2
-    if idCount%2==1:
+    if idCount % 2==1:
         games[gameId] = Game(gameId)
         print("Creating a new game ...")
     else:
