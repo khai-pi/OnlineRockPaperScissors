@@ -45,8 +45,8 @@ def threaded_client(conn, p, gameId):
 
             else:
                 break
-        except error as e:
-            print(e)
+        except:
+            #print(e)
             break
 
         print("Lost connection")
