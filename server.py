@@ -51,13 +51,13 @@ def threaded_client(conn, p, gameId):
 
         print("Lost connection")
 
-        try:
-            del games[gameId]
-            print("Closing Game", gameId)
-        except:
-            pass
-        idCount-=1
-        conn.close()
+    try:
+        del games[gameId]
+        print("Closing Game", gameId)
+    except:
+        pass
+    idCount-=1
+    conn.close()
 
 
 
