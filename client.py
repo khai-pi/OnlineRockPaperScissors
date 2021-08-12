@@ -19,9 +19,9 @@ class Button:
 
     def draw(self, win):
         pygame.draw.rect(win, self.color, (self.x, self.y, self.width, self.height))
-        font = pygame.dont.SysFont("comicsans", 40)
+        font = pygame.font.SysFont("comicsans", 40)
         text = font.render(self.text, 1, (255,255,255))
-        win.blit(text, (self.x + round(self.width/2)- round(text.get_width()/2)), self.y + round(self.height/2) - round(text.get_height()/2))
+        win.blit(text, (self.x + round(self.width/2)- round(text.get_width()/2), self.y + round(self.height/2) - round(text.get_height()/2)))
 
     def click(self, pos):
         x1 = pos[0]
@@ -112,7 +112,7 @@ def main():
             if (game.winner()==1 and player == 1) or (game.winner() == 0 and player == 0):
                 text = font.render("You Won!", 1, (255,0,0))
             elif game.winner() == -1:
-                text = font.render("Tie Game!"< 1, (255,0,0))
+                text = font.render("Tie Game!", 1, (255,0,0))
             else:
                 text = font.render("You Lost...", 1, (255,0,0))
 
@@ -144,6 +144,7 @@ def menu_screen():
 
     while run:
         clock.tick(60)
+        win.fill((128, 128, 128))
         font = pygame.font.SysFont("comicsans", 60)
         text = font.render("Click to Play!", 1, (255,0,0))
         win.blit(text, (100,200))

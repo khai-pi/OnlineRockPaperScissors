@@ -5,7 +5,7 @@ from game import Game
 
 server = "192.168.0.104"
 port = 5555
-currentPlayer = 0
+
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -77,4 +77,3 @@ while True:
 
     start_new_thread(threaded_client,(conn, p, gameId))
 
-    currentPlayer+=1
